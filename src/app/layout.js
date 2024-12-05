@@ -20,9 +20,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="text-3xl font-bold p-4">Virtual Spotter</header>
         {children}
       </body>
     </html>

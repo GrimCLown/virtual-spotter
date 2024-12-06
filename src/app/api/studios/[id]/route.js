@@ -10,3 +10,17 @@ export async function GET(req, { params }) {
     return Response.json(filteredData);
 }   
 
+export async function POST(req, { params }) {
+    const { id } = await params;
+    console.log('id', id);
+    try {
+        const body = await req.json();
+        console.log('body', body);
+        return Response.json(body);
+    } catch (error) {
+        console.error('Error parsing JSON:', error);
+        return new Response('Invalid JSON', { status: 400 });
+    }
+}
+
+
